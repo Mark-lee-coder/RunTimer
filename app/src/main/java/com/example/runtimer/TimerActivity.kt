@@ -37,6 +37,7 @@ class TimerActivity : AppCompatActivity() {
         started = false
         resetButton.isEnabled = true
         start_label.text = resources.getString(R.string.start)
+        actionButton.setImageResource(R.drawable.ic_start_button)
     }
 
     fun updateText() {
@@ -53,6 +54,7 @@ class TimerActivity : AppCompatActivity() {
         }
         else {
             start_label.text = resources.getString(R.string.pause)
+            actionButton.setImageResource(R.drawable.ic_baseline_pause_circle_outline_24)
             started = true
             resetButton.isEnabled = false
             val handler = Handler()

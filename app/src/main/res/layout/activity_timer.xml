@@ -58,7 +58,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/startButton"
+                    android:id="@+id/actionButton"
                     android:layout_width="221dp"
                     android:layout_height="101dp"
                     android:background="@android:color/transparent"
