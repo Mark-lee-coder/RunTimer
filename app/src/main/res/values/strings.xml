@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Run Timer</string>
+    <string name="welcome_to_run_timer">Welcome To Run Timer</string>
+    <string name="get_started">Get Started</string>
+    <string name="running_timer">Running Timer</string>
+    <string name="_00_00_00">00:00:00</string>
+    <string name="min_sec_deci">min\t\tsec\t\tdeci</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="reset">Reset</string>
+</resources>
