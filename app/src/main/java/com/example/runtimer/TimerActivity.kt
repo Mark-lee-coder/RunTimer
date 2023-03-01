@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.TouchDelegate
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_timer.*
 import java.util.*
@@ -61,6 +62,9 @@ class TimerActivity : AppCompatActivity() {
         /**this code makes the screen reader to read the time on the app every 15 secs*/
         if (secs % 15 == 0) {
             timer_text.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED)
+        }
+        else {
+            Toast.makeText(applicationContext, "Something went wrong!", Toast.LENGTH_LONG).show()
         }
     }
 
