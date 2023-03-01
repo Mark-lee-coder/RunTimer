@@ -1,9 +1,12 @@
 package com.example.runtimer
 
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
 import android.os.Handler
+import android.view.TouchDelegate
 import android.view.View
+import android.view.accessibility.AccessibilityEvent
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_timer.*
 import java.util.*
@@ -15,6 +18,14 @@ class TimerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
+
+        val parent: View = homeButton.parent as View
+        val delegateArea = Rect()
+        parent.post {
+            homeButton.getHitRect(delegateArea)
+            delegateArea.left -= 40
+            parent.touchDelegate =  TouchDelegate(delegateArea, homeButton)
+        }
     }
 
     fun View.goHome() {
@@ -46,6 +57,11 @@ class TimerActivity : AppCompatActivity() {
         val milli: Int = time % 100
         val timeString: String = java.lang.String.format(Locale.getDefault(), "%02d:%02d:%02d", minutes, secs, milli)
         timer_text.text = timeString
+
+        /**this code makes the screen reader to read the time on the app every 15 secs*/
+        if (secs % 15 == 0) {
+            timer_text.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED)
+        }
     }
 
     private fun runTimer() {

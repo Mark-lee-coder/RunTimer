@@ -32,6 +32,7 @@
                 android:paddingTop="50sp"
                 android:paddingRight="20sp"
                 android:text="@string/running_timer"
+                android:contentDescription="@string/running_timer"
                 android:textAlignment="center"
                 android:textSize="50sp" />
 
@@ -41,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="20sp"
                 android:text="@string/_00_00_00"
+                android:contentDescription="@string/default_time"
                 android:textAlignment="center"
                 android:textSize="60sp" />
 
@@ -49,6 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="59dp"
                 android:text="@string/min_sec_deci"
+                android:contentDescription="@string/timer_label"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
@@ -63,6 +66,7 @@
                     android:layout_height="101dp"
                     android:background="@android:color/transparent"
                     android:onClick="startTimer"
+                    android:contentDescription="@string/start_button"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ic_start_button" />
 
@@ -72,6 +76,7 @@
                     android:layout_height="101dp"
                     android:background="@android:color/transparent"
                     android:onClick="reset"
+                    android:contentDescription="@string/reset_button"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/reset"
                     app:tint="@color/colorAccent" />
@@ -89,6 +94,7 @@
                     android:layout_height="61dp"
                     android:layout_weight="1"
                     android:text="@string/start"
+                    android:contentDescription="@string/start"
                     android:textAlignment="center"
                     android:textSize="30sp" />
 
@@ -98,6 +104,7 @@
                     android:layout_height="61dp"
                     android:layout_weight="1"
                     android:text="@string/reset"
+                    android:contentDescription="@string/reset"
                     android:textAlignment="center"
                     android:textSize="30sp" />
 
@@ -117,6 +124,7 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:onClick="goHome"
+                    android:contentDescription="@string/home_button"
                     android:paddingTop="10sp"
                     android:paddingBottom="10sp"
                     android:scaleType="fitCenter"
